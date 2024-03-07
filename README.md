@@ -16,8 +16,10 @@ You can open ThingsBoard UI here:
     email: [ADMIN_EMAIL]
     password: [ADMIN_PASSWORD]
 
-You can open pgAdmin web UI here:
+# System Administrator
 
-    URL: https://[CI_CD_DOMAIN]:25648
-    email: [ADMIN_EMAIL]
+Your account is set as Tenant Administrator, like that, you will be able to create new customer.
+If you want to connect as System Administrator, use these credentials:
+
+    email: admin@[CI_CD_DOMAIN]
     password: [ADMIN_PASSWORD]

@@ -7,22 +7,6 @@ ports:
     public: true
     path: "/"
     isAuth: false
-  - protocol: "HTTPS"
-    targetProtocol: "HTTP"
-    listeningPort: "41130"
-    targetPort: "1883"
-    targetIP: "172.17.0.1"
-    public: true
-    path: "/"
-    isAuth: false
-  - protocol: "HTTPS"
-    targetProtocol: "HTTP"
-    listeningPort: "2821"
-    targetPort: "7070"
-    targetIP: "172.17.0.1"
-    public: true
-    path: "/"
-    isAuth: false
 environments:
   - key: "SOFTWARE_VERSION_TAG"
     value: "latest"
@@ -30,11 +14,7 @@ environments:
     value: "random_password"
   - key: "ADMIN_EMAIL"
     value: "[EMAIL]"
-  - key: "thingsboard_MGMT_API_PORT"
-    value: "16631"
-  - key: "thingsboard_MGMT_API_ENDPOINT"
-    value: "https://[CI_CD_DOMAIN]:16631"
-  - key: "thingsboard_LETSENCRYPT_DOMAIN"
+  - key: "DOMAIN"
     value: "[CI_CD_DOMAIN]"
 
 config:
@@ -56,14 +36,6 @@ lifeCycleConfig:
   postDeployCommand: "./scripts/postDeploy.sh"
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
-    label: "ThingsBoard Admin"
-    login: "[ADMIN_EMAIL]"
-    password: "[ADMIN_PASSWORD]"
-  - url: "https://[CI_CD_DOMAIN]:41130"
-    label: "ThingsBoard Admin 2"
-    login: "[ADMIN_EMAIL]"
-    password: "[ADMIN_PASSWORD]"
-  - url: "https://[CI_CD_DOMAIN]:2821"
-    label: "ThingsBoard Admin 3"
+    label: "ThingsBoard"
     login: "[ADMIN_EMAIL]"
     password: "[ADMIN_PASSWORD]"
