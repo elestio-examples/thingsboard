@@ -34,6 +34,12 @@ services:
     environment:
       TB_QUEUE_TYPE: kafka
       TB_KAFKA_SERVERS: kafka:9092
+      SSL_ENABLED: "true"
+      SSL_CREDENTIALS_TYPE: PEM
+      SSL_PEM_CERT: server.pem
+      SSL_PEM_KEY: server_key.pem
     volumes:
       - ./mytb-data:/data
       - ./mytb-logs:/var/log/thingsboard
+      - /root/.acme.sh/vm.elestio.app/fullchain.cer:/etc/thingsboard/conf/server.pem
+      - /root/.acme.sh/vm.elestio.app/vm.elestio.app.key:/etc/thingsboard/conf/server_key.pem
