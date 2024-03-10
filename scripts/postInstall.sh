@@ -3,7 +3,7 @@ set -o allexport; source .env; set +o allexport;
 
 #wait until the server is ready
 echo "Waiting for software to be ready ..."
-sleep 120s;
+sleep 200s;
 
   ######## SYSADMIN ########
 
